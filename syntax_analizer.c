@@ -5,6 +5,9 @@
 #include<stdlib.h>
 #include<stdio.h>
 
+#define TRUE 1
+#define FALSE 0
+
 char token;
 
 void error(){
@@ -45,7 +48,7 @@ int term(void){
     return temp;
 }
 
-int exp(void){
+int exp(){
     int temp;
     
     temp = term();
@@ -64,6 +67,12 @@ int exp(void){
     }
 
     return temp;
+}
+
+int isdigit(char token){
+    if(token >= '0' && token <= '9')
+        return TRUE;
+    return FALSE;
 }
 
 int factor(void){
