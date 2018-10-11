@@ -4,23 +4,28 @@
 #define TRUE 1
 #define FALSE 0
 
+typedef enum { NUMBER, OPERATOR } typeNode;
+
 typedef struct _syntaxtree_{
 	struct _syntaxtree_ *left;
 	struct _syntaxtree_ *right;
 	int key;
+	typeNode type;
 } syntaxTree;
 
 	#ifndef syntaxTree_c_
 
-		syntaxTree *createNode(int data);
+		syntaxTree *createNode(int data, typeNode type);
 		void leftChild(syntaxTree *node, syntaxTree *newnode);
 		void rightChild(syntaxTree *node, syntaxTree *newnode);
+		int resultSyntaxTree(syntaxTree *node);
 
 	#else
 
-		extern syntaxTree *createNode(int data);
+		extern syntaxTree *createNode(int data, typeNode type);
 		extern void leftChild(syntaxTree *node, syntaxTree *newnode);
 		extern void rightChild(syntaxTree *node, syntaxTree *newnode);
+		extern int resultSyntaxTree(syntaxTree *node);
 
 	#endif
 #endif
