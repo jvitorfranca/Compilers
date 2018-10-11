@@ -18,6 +18,7 @@ typedef struct _syntaxtree_{
 		syntaxTree *createNode(int data, typeNode type);
 		void leftChild(syntaxTree *node, syntaxTree *newnode);
 		void rightChild(syntaxTree *node, syntaxTree *newnode);
+		void treePreOrder(syntaxTree *root);
 		int resultSyntaxTree(syntaxTree *node);
 
 	#else
@@ -25,6 +26,7 @@ typedef struct _syntaxtree_{
 		extern syntaxTree *createNode(int data, typeNode type);
 		extern void leftChild(syntaxTree *node, syntaxTree *newnode);
 		extern void rightChild(syntaxTree *node, syntaxTree *newnode);
+		extern void treePreOrder(syntaxTree *root);
 		extern int resultSyntaxTree(syntaxTree *node);
 
 	#endif
